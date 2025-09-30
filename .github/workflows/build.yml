@@ -23,7 +23,8 @@ jobs:
         with:
           args: >
             -Dsonar.organization=${{ secrets.SONAR_ORG }}
-            -Dsonar.projectKey=codedd-consistency-test
+            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+            -Dsonar.branch.name=${{ github.ref_name }}
       # If you wish to fail your job when the Quality Gate is red, uncomment the
       # following lines. This would typically be used to fail a deployment.
       # - uses: SonarSource/sonarqube-quality-gate-action@v1
